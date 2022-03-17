@@ -23,4 +23,4 @@ export class StyleBtnDirective implements OnInit{
    this.BG1 = "purple"
    
  } 
-}
+} //problemas cm minha diretiva, arrumar

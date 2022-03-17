@@ -6,12 +6,14 @@
     border: none;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(10, 10, 10, 0.472);
+    
 }
 
 h1{
     text-align: center;
     color: rgb(122, 19, 19);
     font-family:'Pacifico', cursive;
+    font-size: 40px;
 }
 
 #lista{
@@ -24,6 +26,7 @@ h1{
     width: 120px;
     background-color:rgb(230, 125, 125);
     Color: white;
+;
     
     
 }
@@ -50,8 +53,10 @@ li {
 }    
     
 p{
-    font-size: 15px;
+    font-size: 20px;
     color: rgb(122, 19, 19);
     font-family: 'Pacifico', cursive;
 }
  
+
+

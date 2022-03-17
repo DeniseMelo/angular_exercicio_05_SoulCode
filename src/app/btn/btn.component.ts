@@ -7,7 +7,7 @@ import { Component,EventEmitter,Output  } from '@angular/core';
 })
 export class BtnComponent {
 
-  ItensdaminhaLista = [''];
+ /* ItensdaminhaLista = [''];
   
   minhalistafofinha: string = ''
 
@@ -51,22 +51,56 @@ export class BtnComponent {
 
 
 
-    @Output()
-  clicou2:EventEmitter<any> = new EventEmitter<any>()
-  excluirlista(){
-    this.ItensdaminhaLista.splice(this.minhalistafofinha.length)
-    this.clicou2.emit()
-  }
-  @Output()
-  clicou1:EventEmitter<string> = new EventEmitter<string>()
-  RemoverLista(Itens:string){
-      this.ItensdaminhaLista.splice(this.ItensdaminhaLista.indexOf(Itens),1)
-      this.clicou1.emit()
+    
+    }*/
+  
+  
+    titulo: string = ''
+
+    Itens = ['']
+
+    Item = ''
+
+    Adicionar() {
+      this.Itens.push(this.Item);
+      this.Item = ''
     }
-  }
 
+    Retirar(Item: string){
+      this.Itens.splice( this.Itens.indexOf(Item),1);
+    }
 
+    ExcluirListaFofinha(){
+      this.Itens.splice(this.Item.indexOf(this.Item));
+    }
 
+    ngOnInit(): void{
+      this.RecuperarDados()
+    }
 
+    SalvarDados(valor:string): void{
+      this.Itens.push(valor)
+      let ArSt = JSON.stringify(this.Itens)
+      localStorage.setItem('item',ArSt)
+      this.RecuperarDados()
 
+    }
+
+    RecuperarDados(): void{
+      let storage = localStorage.getItem('item')
+      let Array = JSON.parse(storage || '[]')
+      this.Itens = Array
+
+    }
+
+    RemoverItem(index: number): void { 
+      this.Itens.splice(index, 1)
+
+      let ArSt = JSON.stringify(this.Itens)
+      localStorage.setItem('Item',ArSt)
+      this.RecuperarDados()
+
+    }
+
+}
 

@@ -1,40 +1,22 @@
+
 <h1>Minha lista de atividades</h1>
-
-
-  
 <mat-card class="container-card">
-  <mat-card-title>
-    
-  </mat-card-title>
-  <div class="componenteprincipal">
-  <input matInt type="text" [(ngModel)]="minhalistafofinha">
-  <button id="btn1" mat-raised-button color (click)="AdicionarLista()"
 
-  >adicionar item</button>
-  
-  </div>
-  <mat-card-content>
-    <ul id="lista"  *ngFor="let Itens of ItensdaminhaLista">
-      <li> {{Itens}} </li>
-      <button id="btn2"mat-raised-button color (click)="RemoverLista(Itens)">Remover Item</button>
-      
-       
+  <input matInt type="text" [(ngModel)]="Item" #item>
+  <button id="btn1" mat-raised-button color (click)="SalvarDados(item.value)"> Adicionar item</button>
+  <div class="list">
+    <ul>
+
+      <li class="lt" *ngFor="let item of Itens" let Item=index> {{ item }}
+        <button id="btn2" mat-raised-button color (click)="Retirar(Item)">Remover Item</button>
+      </li>
     </ul>
-  </mat-card-content>
-<div class="excluirlistafofinha">
-    <p>Deseja excluir um total de {{ItensdaminhaLista.length}} itens?</p>
-    <button id="btn3" mat-raised-button color (click)="excluirlista()">excluir lista</button>
   </div>
-</mat-card>
+  
+  <div class="excluirlistafofinha">
+    
+    <button id="btn3" mat-raised-button color (click)="ExcluirListaFofinha()">excluir lista</button><br>
+    <p>Deseja excluir um total de {{Itens.length}} itens?</p>
+  </div>
 
-        
-      
-  
-    
-    
-      
-      
-    
-    
-    
-  
+</mat-card>
